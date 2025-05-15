@@ -118,13 +118,9 @@
                     <p class="text-blue-500 mt-1 sm:mt-2 font-semibold">$19/month</p>
                     <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-sm text-gray-600" id="basic-plan-text">Essential features for small teams.</p>
                 </div>
+                <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover MOUSETRAP (or equivalent) to capture the mouse events.
                 <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover-glow text-hover">
-                    <h3 class="text-lg sm:text-xl md:text-xl font-medium text-gray-800">Business</h3>
-                    <p class="text-blue-500 mt-1 sm:mt-2 font-semibold">$49/month</p>
-                    <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-sm text-gray-600" id="business-plan-text">Advanced tools for growing businesses.</p>
-                </div>
-                <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover-glow text-hover">
-                    <div class="text-lg sm:text-xl md:text-xl font-medium text-gray-800">Custom</div>
+                    <h3 class="text-lg sm:text-xl md:text-xl font-medium text-gray-800">Custom</h3>
                     <p class="text-blue-500 mt-1 sm:mt-2 font-semibold" id="custom-plan-price">Contact Us</p>
                     <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-sm text-gray-600" id="custom-plan-text">Tailored solutions for enterprises.</p>
                 </div>
@@ -143,7 +139,7 @@
                         <label for="email" class="block text-sm sm:text-base font-medium text-gray-700" id="email-label">Email</label>
                         <input type="email" id="email" name="email" required class="w-full p-2 border rounded-md"/>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-22">
                         <label for="message" class="block text-sm sm:text-base font-medium text-gray-700" id="message-label">Message</label>
                         <textarea id="message" name="message" required class="w-full p-2 border rounded-md h-24"></textarea>
                     </div>
@@ -156,11 +152,11 @@
             <div class="g-recaptcha" data-sitekey="6LeOkDsrAAAAAIzvu7Swq3zwoK5FjWAIAgD5_re8" data-callback="onCaptchaVerified" data-size="invisible"></div>
             <a href="software/evyox.exe" download id="download-link">
                 <button class="download-btn bg-blue-600 text-white font-semibold px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300" id="download-button" style="display: none;">
-                    Descargar Ahora
+                    Download Now
                 </button>
             </a>
             <div class="progress-bar mt-2"></div>
-            <a href="/blog" class="block mt-4 text-blue-600 hover:underline text-sm sm:text-base md:text-lg" id="learn-more">Aprende Más Sobre Evyox</a>
+            <a href="/blog" class="block mt-4 text-blue-600 hover:underline text-sm sm:text-base md:text-lg" id="learn-more">Learn More About Evyox</a>
         </section>
     </main>
 
@@ -168,6 +164,165 @@
         <p id="footer-text">© 2025 Evyox. All rights reserved.</p>
     </footer>
 
-    <script>let currentSlide=0;const slides=document.querySelectorAll('.carousel-item');const totalSlides=slides.length;function showSlide(index){if(index>=totalSlides)currentSlide=0;else if(index<0)currentSlide=totalSlides-1;else currentSlide=index;const offset=-currentSlide*100;document.querySelector('.carousel-inner').style.transform=`translateX(${offset}%)`;slides.forEach((slide,i)=>{slide.classList.remove('active');if(i===currentSlide)slide.classList.add('active')})}function changeSlide(direction){showSlide(currentSlide+direction)}setInterval(() => changeSlide(1),5000);showSlide(currentSlide);let currentTestimonialSlide=0;const testimonialSlides=document.querySelectorAll('.testimonial-item');const totalTestimonialSlides=testimonialSlides.length;function showTestimonialSlide(index){if(index>=totalTestimonialSlides)currentTestimonialSlide=0;else if(index<0)currentTestimonialSlide=totalTestimonialSlides-1;else currentTestimonialSlide=index;const offset=-currentTestimonialSlide*100;document.querySelector('.testimonial-inner').style.transform=`translateX(${offset}%)`}function changeTestimonialSlide(direction){showTestimonialSlide(currentTestimonialSlide+direction)}setInterval(() => changeTestimonialSlide(1),7000);showTestimonialSlide(currentTestimonialSlide);window.addEventListener('scroll',() => {const icon=document.getElementById('parallax-icon');const scrollPosition=window.pageYOffset;icon.style.transform=`translateY(${scrollPosition*0.3}px)`});const revealElements=document.querySelectorAll('.scroll-reveal');const revealOnScroll=() => {revealElements.forEach(element => {const windowHeight=window.innerHeight;const elementTop=element.getBoundingClientRect().top;if(elementTop<windowHeight-100){element.classList.add('visible')}})};window.addEventListener('scroll',revealOnScroll);revealOnScroll();const downloadLink=document.getElementById('download-link');const downloadButton=document.getElementById('download-button');const progressBar=document.querySelector('.progress-bar');let captchaVerified=false;function onCaptchaVerified(token){console.log('CAPTCHA verified:', token);captchaVerified=true;downloadButton.style.display='block';}downloadButton.addEventListener('click',async(e) => {e.preventDefault();if(!captchaVerified){grecaptcha.execute();return}downloadLink.click();progressBar.style.display='block';let width=0;const interval=setInterval(() => {if(width>=100){clearInterval(interval);progressBar.style.display='none';downloadButton.style.display='block';downloadLink.style.display='none'}else{width+=10;progressBar.style.width=`${width}%`}},200)});const translations={en:{'header-subtitle':'Revolutionary Management Software','description-text':'Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful, it’s designed to simplify your workflow.','demo-title':'Watch Evyox in Action','analytics-title':'Powerful Analytics','analytics-text':'Gain deep insights into your business with Evyox’s advanced analytics tools, designed to help you make data-driven decisions.','team-title':'Team Collaboration','team-text':'Enhance teamwork with Evyox’s seamless collaboration features, keeping your team connected and productive.','pricing-title':'Pricing Plans','test-plan-text':'Try Evyox with full access for testing.','basic-plan-text':'Essential features for small teams.','business-plan-text':'Advanced tools for growing businesses.','custom-plan-price':'Contact Us','custom-plan-text':'Tailored solutions for enterprises.','contact-title':'Get in Touch','name-label':'Name','email-label':'Email','message-label':'Message','download-button':'Download Now','learn-more':'Learn More About Evyox','footer-text':'© 2025 Evyox. All rights reserved.'},es:{'header-subtitle':'Software de Gestión Revolucionario','description-text':'Optimiza tu negocio con Evyox – la herramienta definitiva para una administración eficiente. Moderna, intuitiva y poderosa, diseñada para simplificar tu flujo de trabajo.','demo-title':'Mira Evyox en Acción','analytics-title':'Análisis Potente','analytics-text':'Obtén información profunda sobre tu negocio con las herramientas avanzadas de análisis de Evyox, diseñadas para ayudarte a tomar decisiones basadas en datos.','team-title':'Colaboración en Equipo','team-text':'Mejora el trabajo en equipo con las funciones de colaboración fluidas de Evyox, manteniendo a tu equipo conectado y productivo.','pricing-title':'Planes de Precios','test-plan-text':'Prueba Evyox con acceso completo para testing.','basic-plan-text':'Funciones esenciales para equipos pequeños.','business-plan-text':'Herramientas avanzadas para negocios en crecimiento.','custom-plan-price':'Contáctanos','custom-plan-text':'Soluciones personalizadas para empresas.','contact-title':'Ponte en Contacto','name-label':'Nombre','email-label':'Correo Electrónico','message-label':'Mensaje','download-button':'Descargar Ahora','learn-more':'Aprende Más Sobre Evyox','footer-text':'© 2025 Evyox. Todos los derechos reservados.'}};const langSelector=document.getElementById('language-selector');langSelector.addEventListener('change',() => {const lang=langSelector.value;document.querySelectorAll('[id]').forEach(element => {if(translations[lang][element.id]){element.textContent=translations[lang][element.id]}})});</script>
+    <script>
+        // Carousel logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentSlide) slide.classList.add('active');
+            });
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        setInterval(() => changeSlide(1), 5000);
+        showSlide(currentSlide);
+
+        // Testimonial carousel logic
+        let currentTestimonialSlide = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-item');
+        const totalTestimonialSlides = testimonialSlides.length;
+
+        function showTestimonialSlide(index) {
+            if (index >= totalTestimonialSlides) currentTestimonialSlide = 0;
+            else if (index < 0) currentTestimonialSlide = totalTestimonialSlides - 1;
+            else currentTestimonialSlide = index;
+            const offset = -currentTestimonialSlide * 100;
+            document.querySelector('.testimonial-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function changeTestimonialSlide(direction) {
+            showTestimonialSlide(currentTestimonialSlide + direction);
+        }
+
+        setInterval(() => changeTestimonialSlide(1), 7000);
+        showTestimonialSlide(currentTestimonialSlide);
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const icon = document.getElementById('parallax-icon');
+            const scrollPosition = window.pageYOffset;
+            icon.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Download button logic
+        const downloadLink = document.getElementById('download-link');
+        const downloadButton = document.getElementById('download-button');
+        const progressBar = document.querySelector('.progress-bar');
+        let captchaVerified = false;
+
+        function onCaptchaVerified(token) {
+            console.log('CAPTCHA verified:', token);
+            captchaVerified = true;
+            downloadButton.style.display = 'block';
+        }
+
+        window.onload = function() {
+            grecaptcha.execute();
+        };
+
+        downloadButton.addEventListener('click', async (e) => {
+            e.preventDefault();
+            if (!captchaVerified) {
+                grecaptcha.execute();
+                return;
+            }
+            progressBar.style.display = 'block';
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    progressBar.style.display = 'none';
+                    downloadLink.click();
+                } else {
+                    width += 10;
+                    progressBar.style.width = `${width}%`;
+                }
+            }, 200);
+        });
+
+        // Language translations
+        const translations = {
+            en: {
+                'header-subtitle': 'Revolutionary Management Software',
+                'description-text': 'Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful, it’s designed to simplify your workflow.',
+                'demo-title': 'Watch Evyox in Action',
+                'analytics-title': 'Powerful Analytics',
+                'analytics-text': 'Gain deep insights into your business with Evyox’s advanced analytics tools, designed to help you make data-driven decisions.',
+                'team-title': 'Team Collaboration',
+                'team-text': 'Enhance teamwork with Evyox’s seamless collaboration features, keeping your team connected and productive.',
+                'pricing-title': 'Pricing Plans',
+                'test-plan-text': 'Try Evyox with full access for testing.',
+                'basic-plan-text': 'Essential features for small teams.',
+                'business-plan-text': 'Advanced tools for growing businesses.',
+                'custom-plan-price': 'Contact Us',
+                'custom-plan-text': 'Tailored solutions for enterprises.',
+                'contact-title': 'Get in Touch',
+                'name-label': 'Name',
+                'email-label': 'Email',
+                'message-label': 'Message',
+                'download-button': 'Download Now',
+                'learn-more': 'Learn More About Evyox',
+                'footer-text': '© 2025 Evyox. All rights reserved.'
+            },
+            es: {
+                'header-subtitle': 'Software de Gestión Revolucionario',
+                'description-text': 'Optimiza tu negocio con Evyox – la herramienta definitiva para una administración eficiente. Moderna, intuitiva y poderosa, diseñada para simplificar tu flujo de trabajo.',
+                'demo-title': 'Mira Evyox en Acción',
+                'analytics-title': 'Análisis Potente',
+                'analytics-text': 'Obtén información profunda sobre tu negocio con las herramientas avanzadas de análisis de Evyox, diseñadas para ayudarte a tomar decisiones basadas en datos.',
+                'team-title': 'Colaboración en Equipo',
+                'team-text': 'Mejora el trabajo en equipo con las funciones de colaboración fluidas de Evyox, manteniendo a tu equipo conectado y productivo.',
+                'pricing-title': 'Planes de Precios',
+                'test-plan-text': 'Prueba Evyox con acceso completo para testing.',
+                'basic-plan-text': 'Funciones esenciales para equipos pequeños.',
+                'business-plan-text': 'Herramientas avanzadas para negocios en crecimiento.',
+                'custom-plan-price': 'Contáctanos',
+                'custom-plan-text': 'Soluciones personalizadas para empresas.',
+                'contact-title': 'Ponte en Contacto',
+                'name-label': 'Nombre',
+                'email-label': 'Correo Electrónico',
+                'message-label': 'Mensaje',
+                'download-button': 'Descargar Ahora',
+                'learn-more': 'Aprende Más Sobre Evyox',
+                'footer-text': '© 2025 Evyox. Todos los derechos reservados.'
+            }
+        };
+
+        const langSelector = document.getElementById('language-selector');
+        langSelector.addEventListener('change', () => {
+            const lang = langSelector.value;
+            document.querySelectorAll('[id]').forEach(element => {
+                if (translations[lang][element.id]) {
+                    element.textContent = translations[lang][element.id];
+                }
+            });
+        });
+    </script>
 </body>
 </html>
