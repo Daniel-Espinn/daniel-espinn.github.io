@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeOkDsrAAAAAIzvu7Swq3zwoK5FjWAIAgD5_re8"></script>
     <meta name="description" content="Discover Evyox, the revolutionary management software designed to streamline your business with powerful analytics and collaboration tools.">
     <meta property="og:title" content="Evyox - Revolutionary Management Software">
     <meta property="og:description" content="Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful.">
@@ -118,7 +117,11 @@
                     <p class="text-blue-500 mt-1 sm:mt-2 font-semibold">$19/month</p>
                     <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-sm text-gray-600" id="basic-plan-text">Essential features for small teams.</p>
                 </div>
-                <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover MOUSETRAP (or equivalent) to capture the mouse events.
+                <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover-glow text-hover">
+                    <h3 class="text-lg sm:text-xl md:text-xl font-medium text-gray-800">Business</h3>
+                    <p class="text-blue-500 mt-1 sm:mt-2 font-semibold">$49/month</p>
+                    <p class="mt-1 sm:mt-2 text-xs sm:text-sm md:text-sm text-gray-600" id="business-plan-text">Advanced tools for growing businesses.</p>
+                </div>
                 <div class="bg-gray-50 p-2 sm:p-4 md:p-6 rounded-lg shadow-lg hover-glow text-hover">
                     <h3 class="text-lg sm:text-xl md:text-xl font-medium text-gray-800">Custom</h3>
                     <p class="text-blue-500 mt-1 sm:mt-2 font-semibold" id="custom-plan-price">Contact Us</p>
@@ -139,7 +142,7 @@
                         <label for="email" class="block text-sm sm:text-base font-medium text-gray-700" id="email-label">Email</label>
                         <input type="email" id="email" name="email" required class="w-full p-2 border rounded-md"/>
                     </div>
-                    <div class="mb-22">
+                    <div class="mb-4">
                         <label for="message" class="block text-sm sm:text-base font-medium text-gray-700" id="message-label">Message</label>
                         <textarea id="message" name="message" required class="w-full p-2 border rounded-md h-24"></textarea>
                     </div>
@@ -149,9 +152,8 @@
         </section>
 
         <section class="text-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 scroll-reveal">
-            <div class="g-recaptcha" data-sitekey="6LeOkDsrAAAAAIzvu7Swq3zwoK5FjWAIAgD5_re8" data-callback="onCaptchaVerified" data-size="invisible"></div>
             <a href="software/evyox.exe" download id="download-link">
-                <button class="download-btn bg-blue-600 text-white font-semibold px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300" id="download-button" style="display: none;">
+                <button class="download-btn bg-blue-600 text-white font-semibold px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300" id="download-button">
                     Download Now
                 </button>
             </a>
@@ -234,24 +236,9 @@
         const downloadLink = document.getElementById('download-link');
         const downloadButton = document.getElementById('download-button');
         const progressBar = document.querySelector('.progress-bar');
-        let captchaVerified = false;
-
-        function onCaptchaVerified(token) {
-            console.log('CAPTCHA verified:', token);
-            captchaVerified = true;
-            downloadButton.style.display = 'block';
-        }
-
-        window.onload = function() {
-            grecaptcha.execute();
-        };
 
         downloadButton.addEventListener('click', async (e) => {
             e.preventDefault();
-            if (!captchaVerified) {
-                grecaptcha.execute();
-                return;
-            }
             progressBar.style.display = 'block';
             let width = 0;
             const interval = setInterval(() => {
