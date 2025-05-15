@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evyox - Revolutionary Management Software</title>
+    <link rel="icon" type="icon/ico" href="assets/icon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        body {
+            background: white;
+            overflow-x: hidden;
+        }
+        .parallax {
+            position: relative;
+            background-image: linear-gradient(135deg, #3b82f6, #1e40af), url('assets/texture.png');
+            background-blend-mode: soft-light;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            padding: 5rem 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .parallax img {
+            transform: translateY(0);
+            transition: transform 0.1s ease-out;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .download-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        .download-btn:hover::after {
+            left: 100%;
+        }
+    </style>
+</head>
+</head>
+<body class="font-sans text-gray-800">
+    <header class="parallax text-center text-white relative">
+        <img src="assets/icon.ico" alt="Evyox Icon" class="w-28 h-28 mx-auto mb-4 animate__animated animate__zoomIn" id="parallax-icon" />
+        <h1 class="text-6xl font-extrabold tracking-tight animate__animated animate__fadeInUp">Evyox</h1>
+        <p class="text-xl mt-3 opacity-90 animate__animated animate__fadeInUp animate__delay-1s">Revolutionary Management Software</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto py-16 px-4">
+        <!-- Description -->
+        <section class="text-center mb-16 scroll-reveal">
+            <p class="text-lg leading-relaxed text-gray-600">
+                Streamline your business with Evyox – the ultimate tool for efficient administration. 
+                Modern, intuitive, and powerful, it’s designed to simplify your workflow.
+            </p>
+        </section>
+
+        <!-- Images Section -->
+        <section class="mb-16 scroll-reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <img src="assets/screenshot2.png" alt="Evyox Dashboard Screenshot" class="w-full rounded-lg shadow-lg hover-glow" />
+                <img src="assets/screenshot3.png" alt="Evyox Features Screenshot" class="w-full rounded-lg shadow-lg hover-glow" />
+            </div>
+        </section>
+
+        <!-- New Large Image Sections with Text -->
+        <section class="mb-16 flex flex-col md:flex-row items-center scroll-reveal">
+            <img src="assets/screenshot1.png" alt="Evyox Analytics Screenshot" class="w-full md:w-1/2 rounded-lg shadow-lg animate__animated animate__slideInLeft" />
+            <div class="w-full md:w-1/2 p-6 animate__animated animate__fadeIn">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-2">Powerful Analytics</h3>
+                <p class="text-gray-600">Gain deep insights into your business with Evyox’s advanced analytics tools, designed to help you make data-driven decisions.</p>
+            </div>
+        </section>
+
+        <section class="mb-16 flex flex-col md:flex-row-reverse items-center scroll-reveal">
+            <img src="assets/screenshot3.png" alt="Evyox Team Collaboration Screenshot" class="w-full md:w-1/2 rounded-lg shadow-lg animate__animated animate__slideInRight" />
+            <div class="w-full md:w-1/2 p-6 animate__animated animate__fadeIn">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-2">Team Collaboration</h3>
+                <p class="text-gray-600">Enhance teamwork with Evyox’s seamless collaboration features, keeping your team connected and productive.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="mb-16 scroll-reveal">
+            <h2 class="text-3xl font-semibold text-center mb-8 text-blue-600">Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover-glow">
+                    <h3 class="text-xl font-medium text-gray-800">Test</h3>
+                    <p class="text-green-500 mt-2 font-semibold">Free</p>
+                    <p class="mt-2 text-sm text-gray-600">Try Evyox with full access for testing.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover-glow">
+                    <h3 class="text-xl font-medium text-gray-800">Basic</h3>
+                    <p class="text-blue-500 mt-2 font-semibold">$19/month</p>
+                    <p class="mt-2 text-sm text-gray-600">Essential features for small teams.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover-glow">
+                    <h3 class="text-xl font-medium text-gray-800">Business</h3>
+                    <p class="text-blue-500 mt-2 font-semibold">$49/month</p>
+                    <p class="mt-2 text-sm text-gray-600">Advanced tools for growing businesses.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover-glow">
+                    <h3 class="text-xl font-medium text-gray-800">Custom</h3>
+                    <p class="text-blue-500 mt-2 font-semibold">Contact Us</p>
+                    <p class="mt-2 text-sm text-gray-600">Tailored solutions for enterprises.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center scroll-reveal">
+            <a href="software/evyox.exe" download>
+                <button class="download-btn bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300">
+                    Download Now
+                </button>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-gray-500">
+        <p>© 2025 Evyox. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Parallax and Scroll Reveal -->
+    <script>
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const icon = document.getElementById('parallax-icon');
+            const scrollPosition = window.pageYOffset;
+            icon.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    </script>
+</body>
+</html>
