@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Discover Evyox, the revolutionary management software designed to streamline your business with powerful analytics and collaboration tools.">
     <meta property="og:title" content="Evyox - Revolutionary Management Software">
-    <meta property="og:description" content="Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive tools.">
-    <meta property="oglow" content="Explore Evyow’s powerful features for modern business management.">
+    <meta property="og:description" content="Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful.">
     <meta property="og:image" content="assets/icon.ico">
-    <meta property="og:url" content="https://www.grok.com">
+    <meta property="og:url" content="https://www.evyox.com">
     <meta property="og:type" content="website">
     <title>Evyox - Revolutionary Management Software</title>
-    <link rel="stylesheet" type="text/css" href="assets/icon.ico"/>
+    <link rel="icon" type="image/ico" href="assets/icon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
@@ -230,18 +229,26 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(31, 41, 55, 0.9);
             color: white;
             border: none;
-            padding: 0.75rem;
+            padding: 0.5rem;
             cursor: pointer;
-            font-size: 1.125rem;
-            border-radius: 50%;
-            transition: background-color 0.2s ease;
+            font-size: 1.25rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
         }
 
         .carousel-btn:hover {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(55, 65, 81, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-btn:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
         }
 
         .carousel-btn.prev {
@@ -356,6 +363,11 @@
                 backdrop-filter: none;
                 background: rgba(255, 255, 255, 0.9);
             }
+
+            .carousel-btn {
+                padding: 0.4rem;
+                font-size: 1rem;
+            }
         }
 
         @media (min-width: 640px) {
@@ -410,7 +422,7 @@
         <div class="nav-container">
             <a href="#home" class="nav-brand">Evyox</a>
             
-            <!-- Hamburger Menu - Horizontal -->
+            <!-- Hamburger Menu -->
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
@@ -472,10 +484,10 @@
         <section id="features" class="mb-12 scroll-reveal">
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner">
-                    <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Dashboard interface showing key analytics metrics" class="carousel-item" loading="lazy"/>
-                    <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Features overview with intuitive navigation" class="carousel-item" loading="lazy"/>
-                    <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Analytics module for data-driven insights" class="carousel-item" loading="lazy"/>
-                    <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Team collaboration tools in action" class="carousel-item" loading="lazy"/>
+                    <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 800px) 800px, 1200px" alt="Evyox Dashboard interface showing key analytics metrics" class="carousel-item" loading="lazy"/>
+                    <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" sizes="(max-width: 800px) 800px, 1200px" alt="Evyox Features overview with intuitive navigation" class="carousel-item" loading="lazy"/>
+                    <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 800px) 800px, 1200px" alt="Evyox Analytics module for data-driven insights" class="carousel-item" loading="lazy"/>
+                    <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 800px) 800px, 1200px" alt="Evyox Team collaboration tools in action" class="carousel-item" loading="lazy"/>
                 </div>
                 <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous slide">❮</button>
                 <button class="carousel-btn next" id="carousel-next" aria-label="Next slide">❯</button>
@@ -485,12 +497,12 @@
         <!-- Feature Sections -->
         <section class="mb-12 scroll-reveal">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Dashboard Screenshot showcasing user-friendly interface" class="w-full rounded-lg shadow-md hover-glow" loading="lazy"/>
-                <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Features Screenshot highlighting key functionalities" class="w-full rounded-lg shadow-md hover-glow" loading="lazy"/>
+                <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" alt="Evyox Dashboard Screenshot showcasing user-friendly interface" class="w-full rounded-lg shadow-md hover-glow" loading="lazy"/>
+                <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" alt="Evyox Features Screenshot highlighting key functionalities" class="w-full rounded-lg shadow-md hover-glow">
             </div>
 
             <div class="flex flex-col md:flex-row items-center mb-12">
-                <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Analytics Screenshot displaying charts and graphs" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
+                <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" alt="Evyox Analytics Screenshot displaying charts and graphs" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>">
                 <div class="w-full md:w-1/2 p-4 text-hover">
                     <h3 id="analytics-title" class="text-2xl font-semibold text-blue-600 mb-3 text-reveal">Powerful Analytics</h3>
                     <p id="analytics-text" class="text-gray-600 text-reveal">
@@ -501,7 +513,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row-reverse items-center">
-                <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Team Collaboration Screenshot showing communication features" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
+                <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" alt="Evyox Team Collaboration Screenshot showing communication features" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
                 <div class="w-full md:w-1/2 p-4 text-hover">
                     <h3 id="team-title" class="text-2xl font-semibold text-blue-600 mb-3 text-reveal">Team Collaboration</h3>
                     <p id="team-text" class="text-gray-600 text-reveal">
@@ -607,7 +619,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-6 text-sm text-gray-500 border-t border-gray-200">
-        <p id="footer-text">© 2025 Evyox. All rights reserved.</p>
+        <p id="footer-text" class="text-reveal">© 2025 Evyox. All rights reserved.</p>
     </footer>
 
     <script>
@@ -617,15 +629,15 @@
         let isMenuOpen = false;
 
         // DOM elements
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobile-nav');
-        const navbar = document.getElementById('navbar');
-        const carouselInner = document.getElementById('carousel-inner');
-        const testimonialInner = document.getElementById('testimonial-inner');
-        const languageSelector = document.getElementById('language-selector');
-        const mobileLanguageSelector = document.getElementById('mobile-language-selector');
-        const downloadLink = document.getElementById('download-link');
-        const downloadButton = document.getElementById('download-button');
+        const hamburger = document.querySelector('#hamburger');
+        const mobileNav = document.querySelector('#mobile-nav');
+        const navbar = document.querySelector('#navbar');
+        const carouselInner = document.querySelector('#carousel-inner');
+        const testimonialInner = document.querySelector('#testimonial-inner');
+        const languageSelector = document.querySelector('#language-selector');
+        const mobileLanguageSelector = document.querySelector('#mobile-language-selector');
+        const downloadLink = document.querySelector('#download-link');
+        const downloadButton = document.querySelector('#download-button');
         const progressBar = document.querySelector('.progress-bar');
 
         // Carousel data
@@ -757,8 +769,8 @@
         }
 
         // Carousel controls
-        document.getElementById('carousel-prev').addEventListener('click', () => changeSlide(-1));
-        document.getElementById('carousel-next').addEventListener('click', () => changeSlide(1));
+        document.querySelector('#carousel-prev').addEventListener('click', () => changeSlide(-1));
+        document.querySelector('#carousel-next').addEventListener('click', () => changeSlide(1));
 
         // Auto-advance carousel
         setInterval(() => changeSlide(1), 5000);
@@ -778,8 +790,8 @@
         }
 
         // Testimonial controls
-        document.getElementById('testimonial-prev').addEventListener('click', () => changeTestimonialSlide(-1));
-        document.getElementById('testimonial-next').addEventListener('click', () => changeTestimonialSlide(1));
+        document.querySelector('#testimonial-prev').addEventListener('click', () => changeTestimonialSlide(-1));
+        document.querySelector('#testimonial-next').addEventListener('click', () => changeTestimonialSlide(1));
 
         // Auto-advance testimonials
         setInterval(() => changeTestimonialSlide(1), 7000);
@@ -789,7 +801,7 @@
             const translation = translations[lang];
             if (translation) {
                 Object.keys(translation).forEach(key => {
-                    const element = document.getElementById(key);
+                    const element = document.querySelector(`#{key}`);
                     if (element) {
                         element.textContent = translation[key];
                     }
