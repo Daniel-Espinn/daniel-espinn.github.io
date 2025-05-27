@@ -5,67 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Discover Evyox, the revolutionary management software designed to streamline your business with powerful analytics and collaboration tools.">
     <meta property="og:title" content="Evyox - Revolutionary Management Software">
-    <meta property="og:description" content="Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful.">
+    <meta property="og:description" content="Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive tools.">
+    <meta property="oglow" content="Explore Evyow’s powerful features for modern business management.">
     <meta property="og:image" content="assets/icon.ico">
-    <meta property="og:url" content="https://www.evyox.com">
+    <meta property="og:url" content="https://www.grok.com">
     <meta property="og:type" content="website">
-    <title>Evyox - Revolutionary Management Software</title>
-    <link rel="icon" type="image/ico" href="assets/icon.ico"/>
+    <title>EEvyox - Revolutionary Management Software</title>
+    <link rel="stylesheet" type="text/css" href="assets/icon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background: white;
             overflow-x: hidden;
-            font-family: sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
         }
-        .parallax {
+
+        /* Header Styles */
+        .hero-header {
             position: relative;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            background-size: cover;
-            background-position: center;
-            padding: 2rem 0;
+            background: linear-gradient(135deg, #3b82f6, #1e40af, #6b21a8);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
-        .hover-glow:hover {
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-            transform: translateY(-3px);
-            transition: all 0.2s ease;
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .scroll-reveal {
+
+        .logo {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .header-title:hover {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            transition: text-shadow 0.3s ease;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar.sticky {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menu - Vertical Stacking */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .hamburger:hover {
+            background-color: #f3f4f6;
+        }
+
+        .hamburger-line {
+            width: 1.5rem;
+            height: 0.125rem;
+            background-color: #4b5563;
+            transition: all 0.3s ease;
+            border-radius: 0.0625rem;
+            margin: 0;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .hamburger-line:nth-child(2) {
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
-        .download-btn {
-            position: relative;
-            overflow: hidden;
+
+        /* Desktop Navigation */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
-        .large-image {
-            min-height: 120px;
-            object-fit: cover;
-            width: 100%;
-            max-width: 100%;
+
+        .nav-link {
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: color 0.2s ease;
+            cursor: pointer;
         }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #3b82f6;
+        }
+
+        .language-selector {
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            color: #4b5563;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav-link {
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .mobile-nav-link:hover {
+            color: #3b82f6;
+            background-color: #f3f4f6;
+        }
+
+        /* Carousel Styles */
         .carousel {
             position: relative;
             overflow: hidden;
-            max-width: 100%;
-            margin: 0 auto;
-            background: #e0f7fa;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background: #f3f4f6;
         }
+
         .carousel-inner {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .carousel-item {
             min-width: 100%;
-            height: 180px;
+            height: 20rem;
             object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.125rem;
         }
+
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -73,36 +233,78 @@
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 0.5rem;
+            padding: 0.75rem;
             cursor: pointer;
-            font-size: 1.2rem;
-            touch-action: manipulation;
+            font-size: 1.125rem;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
         }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
         .carousel-btn.prev {
-            left: 5px;
+            left: 1rem;
         }
+
         .carousel-btn.next {
-            right: 5px;
+            right: 1rem;
         }
+
+        /* Testimonial Styles */
         .testimonial-carousel {
             position: relative;
             overflow: hidden;
             max-width: 100%;
             margin: 0 auto;
         }
+
         .testimonial-inner {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .testimonial-item {
             min-width: 100%;
-            padding: 1rem;
+            padding: 2rem;
             text-align: center;
         }
+
+        /* Utility Classes */
+        .hover-glow:hover {
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-reveal {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .text-reveal.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         .text-hover:hover {
             color: #2563eb;
             transition: color 0.2s ease;
         }
+
         .progress-bar {
             display: none;
             height: 4px;
@@ -110,366 +312,338 @@
             width: 0%;
             transition: width 0.8s ease-in-out;
         }
-        @media (min-width: 640px) {
-            .parallax {
-                padding: 3rem 0;
+
+        .large-image {
+            min-height: 120px;
+            object-fit: cover;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
             }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-header {
+                padding: 2rem 0;
+                clip-path: none;
+            }
+
+            .hero-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-item {
+                height: 12rem;
+            }
+
+            .large-image {
+                min-height: 100px;
+            }
+
+            .logo {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .navbar.sticky {
+                backdrop-filter: none;
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        @media (min-width: 640px) {
+            .carousel-item {
+                height: 16rem;
+            }
+
             .large-image {
                 min-height: 200px;
             }
-            .carousel-item {
-                height: 250px;
-            }
-            h1 {
-                font-size: 4rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-            .carousel-btn {
-                padding: 0.6rem;
-            }
-            .testimonial-item {
-                padding: 1.2rem;
+
+            .hero-header {
+                padding: 3rem 0;
             }
         }
-        @media (min-width: 768px) {
-            .parallax {
-                padding: 3.5rem 0;
-            }
-            .large-image {
-                min-height: 280px;
-            }
-            .carousel-item {
-                height: 320px;
-            }
-            h1 {
-                font-size: 4.5rem;
-            }
-            h2 {
-                font-size: 2.2rem;
-            }
-            .grid-cols-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .carousel-btn {
-                padding: 0.8rem;
-            }
-            .testimonial-item {
-                padding: 1.5rem;
-            }
-        }
+
         @media (min-width: 1024px) {
-            .parallax {
-                padding: 4rem 0;
+            .carousel-item {
+                height: 24rem;
             }
+
             .large-image {
                 min-height: 350px;
             }
-            .carousel-item {
-                height: 400px;
-            }
-            .grid-cols-4 {
-                grid-template-columns: repeat(4, 1fr);
+
+            .hero-header {
+                padding: 4rem 0;
             }
         }
+
         @media (min-width: 1280px) {
             .large-image {
                 min-height: 400px;
             }
+
             .carousel-item {
-                height: 480px;
-            }
-            .carousel-btn {
-                padding: 1rem;
-            }
-        }
-        @media (max-width: 639px) {
-            .parallax {
-                clip-path: none;
-            }
-            .carousel-item {
-                height: 150px;
-            }
-            .large-image {
-                min-height: 100px;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.5rem;
+                height: 28rem;
             }
         }
     </style>
 </head>
-<body class="text-gray-800">
-    <header class="parallax text-center text-white relative">
-        <img src="assets/icon.ico" alt="Evyox Logo Icon" class="w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 mx-auto mb-2 sm:mb-3"/>
-        <h1 class="text-3xl sm:text-4rem md:text-4.5rem font-extrabold tracking-tight">Evyox</h1>
-        <p class="text-base sm:text-lg md:text-xl mt-1 sm:mt-2 opacity-90" id="header-subtitle">Revolutionary Management Software</p>
+<body>
+    <!-- Header -->
+    <header id="home" class="hero-header">
+        <img src="assets/icon.ico" alt="Evyox Logo Icon" class="logo"/>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-2 text-reveal header-title">Evyox</h1>
+        <p id="header-subtitle" class="text-lg sm:text-xl md:text-2xl opacity-90 text-reveal">Revolutionary Management Software</p>
     </header>
 
-    <main class="max-w-4xl mx-auto py-4 sm:py-6 md:py-8 px-2 sm:px-4">
-        <div class="flex justify-end mb-3">
-            <select id="language-selector" class="p-1.5 border rounded text-sm">
-                <option value="en">English</option>
-                <option value="es">Español</option>
-            </select>
-        </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">Evyox</a>
+            
+            <!-- Hamburger Menu - Horizontal -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
 
-        <section class="text-center mb-4 sm:mb-6 md:mb-8 scroll-reveal">
-            <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 text-hover" id="description-text">
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#demo" class="nav-link" data-section="demo">Demo</a>
+                <a href="#features" class="nav-link" data-section="features">Features</a>
+                <a href="#pricing" class="nav-link" data-section="pricing">Pricing</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="mobile-nav-links">
+                    <a href="#home" class="mobile-nav-link" data-section="home">Home</a>
+                    <a href="#demo" class="mobile-nav-link" data-section="demo">Demo</a>
+                    <a href="#features" class="mobile-nav-link" data-section="features">Features</a>
+                    <a href="#pricing" class="mobile-nav-link" data-section="pricing">Pricing</a>
+                    <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+                    <select id="mobile-language-selector" class="language-selector mt-4 w-full">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-8 px-4">
+        <!-- Description -->
+        <section class="text-center mb-12 scroll-reveal">
+            <p id="description-text" class="text-lg leading-relaxed text-gray-600 text-hover text-reveal">
                 Streamline your business with Evyox – the ultimate tool for efficient administration. 
-                Modern, intuitive, and powerful, it’s designed to simplify your workflow.
+                Modern, intuitive, and powerful, it's designed to simplify your workflow.
             </p>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
+        <!-- Demo Section -->
+        <section id="demo" class="mb-12 scroll-reveal">
             <div class="text-center">
-                <h2 class="text-xl sm:text-2rem md:text-2.2rem font-semibold mb-3 sm:mb-4 md:mb-5 text-blue-600" id="demo-title">Watch Evyox in Action</h2>
-                <video controls class="w-full max-w-3xl mx-auto rounded-lg shadow-md" poster="assets/screenshot1.png" preload="metadata" loading="lazy">
+                <h2 id="demo-title" class="text-3xl font-semibold mb-6 text-blue-600 text-reveal">Watch Evyox in Action</h2>
+                <video controls class="w-full max-w-4xl mx-auto rounded-lg shadow-md" poster="assets/screenshot1.png" preload="metadata" loading="lazy">
                     <source src="assets/evyox-demo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
+        <!-- Features Carousel -->
+        <section id="features" class="mb-12 scroll-reveal">
             <div class="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner" id="carousel-inner">
                     <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Dashboard interface showing key analytics metrics" class="carousel-item" loading="lazy"/>
                     <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Features overview with intuitive navigation" class="carousel-item" loading="lazy"/>
                     <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Analytics module for data-driven insights" class="carousel-item" loading="lazy"/>
                     <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Team collaboration tools in action" class="carousel-item" loading="lazy"/>
                 </div>
-                <button class="carousel-btn prev" aria-label="Previous slide" tabindex="0">❮</button>
-                <button class="carousel-btn next" aria-label="Next slide" tabindex="0">❯</button>
+                <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous slide">❮</button>
+                <button class="carousel-btn next" id="carousel-next" aria-label="Next slide">❯</button>
             </div>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+        <!-- Feature Sections -->
+        <section class="mb-12 scroll-reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <img src="assets/screenshot2.png" srcset="assets/screenshot2-small.png 480w, assets/screenshot2.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Dashboard Screenshot showcasing user-friendly interface" class="w-full rounded-lg shadow-md hover-glow" loading="lazy"/>
                 <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Features Screenshot highlighting key functionalities" class="w-full rounded-lg shadow-md hover-glow" loading="lazy"/>
             </div>
-        </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 flex flex-col md:flex-row items-center scroll-reveal">
-            <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Analytics Screenshot displaying charts and graphs" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
-            <div class="w-full md:w-1/2 p-2 sm:p-3 md:p-4 text-hover">
-                <h3 class="text-lg sm:text-xl md:text-xl font-semibold text-blue-600 mb-1 sm:mb-1.5" id="analytics-title">Powerful Analytics</h3>
-                <p class="text-xs sm:text-sm md:text-base text-gray-600" id="analytics-text">Gain deep insights into your business with Evyox’s advanced analytics tools, designed to help you make data-driven decisions.</p>
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <img src="assets/screenshot1.png" srcset="assets/screenshot1-small.png 480w, assets/screenshot1.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Analytics Screenshot displaying charts and graphs" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
+                <div class="w-full md:w-1/2 p-4 text-hover">
+                    <h3 id="analytics-title" class="text-2xl font-semibold text-blue-600 mb-3 text-reveal">Powerful Analytics</h3>
+                    <p id="analytics-text" class="text-gray-600 text-reveal">
+                        Gain deep insights into your business with Evyox's advanced analytics tools, 
+                        designed to help you make data-driven decisions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Team Collaboration Screenshot showing communication features" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
+                <div class="w-full md:w-1/2 p-4 text-hover">
+                    <h3 id="team-title" class="text-2xl font-semibold text-blue-600 mb-3 text-reveal">Team Collaboration</h3>
+                    <p id="team-text" class="text-gray-600 text-reveal">
+                        Enhance teamwork with Evyox's seamless collaboration features, 
+                        keeping your team connected and productive.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 flex flex-col md:flex-row-reverse items-center scroll-reveal">
-            <img src="assets/screenshot3.png" srcset="assets/screenshot3-small.png 480w, assets/screenshot3.png 1200w" sizes="(max-width: 600px) 480px, 1200px" alt="Evyox Team Collaboration Screenshot showing communication features" class="large-image md:w-1/2 rounded-lg shadow-md" loading="lazy"/>
-            <div class="w-full md:w-1/2 p-2 sm:p-3 md:p-4 text-hover">
-                <h3 class="text-lg sm:text-xl md:text-xl font-semibold text-blue-600 mb-1 sm:mb-1.5" id="team-title">Team Collaboration</h3>
-                <p class="text-xs sm:text-sm md:text-base text-gray-600" id="team-text">Enhance teamwork with Evyox’s seamless collaboration features, keeping your team connected and productive.</p>
-            </div>
-        </section>
-
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
+        <!-- Testimonials -->
+        <section class="mb-12 scroll-reveal">
             <div class="testimonial-carousel">
-                <div class="testimonial-inner">
+                <div class="testimonial-inner" id="testimonial-inner">
                     <div class="testimonial-item">
-                        <p class="text-sm sm:text-base md:text-lg italic text-gray-600">"Evyox transformed our workflow – a game-changer!"</p>
-                        <p class="mt-1.5 text-xs sm:text-sm font-semibold">– Jane Doe, CEO</p>
+                        <p class="text-xl italic text-gray-600 mb-4 text-reveal">"Evyox transformed our workflow – a game-changer!"</p>
+                        <p class="font-semibold text-gray-800 text-reveal">– Jane Doe, CEO</p>
                     </div>
                     <div class="testimonial-item">
-                        <p class="text-sm sm:text-base md:text-lg italic text-gray-600">"The analytics tools are incredibly powerful."</p>
-                        <p class="mt-1.5 text-xs sm:text-sm font-semibold">– John Smith, Manager</p>
+                        <p class="text-xl italic text-gray-600 mb-4 text-reveal">"The analytics tools are incredibly powerful."</p>
+                        <p class="font-semibold text-gray-800 text-reveal">– John Smith, Manager</p>
                     </div>
                     <div class="testimonial-item">
-                        <p class="text-sm sm:text-base md:text-lg italic text-gray-600">"Team collaboration has never been easier."</p>
-                        <p class="mt-1.5 text-xs sm:text-sm font-semibold">– Emily Brown, Team Lead</p>
+                        <p class="text-xl italic text-gray-600 mb-4 text-reveal">"Team collaboration has never been easier."</p>
+                        <p class="font-semibold text-gray-800 text-reveal">– Emily Brown, Team Lead</p>
                     </div>
                 </div>
-                <button class="carousel-btn prev" aria-label="Previous testimonial" tabindex="0">❮</button>
-                <button class="carousel-btn next" aria-label="Next testimonial" tabindex="0">❯</button>
+                <button class="carousel-btn prev" id="testimonial-prev" aria-label="Previous testimonial">❮</button>
+                <button class="carousel-btn next" id="testimonial-next" aria-label="Next testimonial">❯</button>
             </div>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
-            <h2 class="text-xl sm:text-2rem md:text-2.2rem font-semibold text-center mb-3 sm:mb-4 md:mb-5 text-blue-600" id="pricing-title">Pricing Plans</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
-                <div class="bg-gray-50 p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover-glow text-hover">
-                    <h3 class="text-base sm:text-lg md:text-lg font-medium text-gray-800">Test</h3>
-                    <p class="text-green-500 mt-1 font-semibold">Free</p>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-600" id="test-plan-text">Try Evyox with full access for testing.</p>
+        <!-- Pricing -->
+        <section id="pricing" class="mb-12 scroll-reveal">
+            <h2 id="pricing-title" class="text-3xl font-semibold text-center mb-8 text-blue-600 text-reveal">Pricing Plans</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-glow text-hover">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2 text-reveal">Test</h3>
+                    <p class="text-green-500 font-semibold mb-3 text-reveal">Free</p>
+                    <p id="test-plan-text" class="text-sm text-gray-600 text-reveal">Try Evyox with full access for testing.</p>
                 </div>
-                <div class="bg-gray-50 p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover-glow text-hover">
-                    <h3 class="text-base sm:text-lg md:text-lg font-medium text-gray-800">Basic</h3>
-                    <p class="text-blue-500 mt-1 font-semibold">$19/month</p>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-600" id="basic-plan-text">Essential features for small teams.</p>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-glow text-hover">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2 text-reveal">Basic</h3>
+                    <p class="text-blue-500 font-semibold mb-3 text-reveal">$19/month</p>
+                    <p id="basic-plan-text" class="text-sm text-gray-600 text-reveal">Essential features for small teams.</p>
                 </div>
-                <div class="bg-gray-50 p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover-glow text-hover">
-                    <h3 class="text-base sm:text-lg md:text-lg font-medium text-gray-800">Business</h3>
-                    <p class="text-blue-500 mt-1 font-semibold">$49/month</p>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-600" id="business-plan-text">Advanced tools for growing businesses.</p>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-glow text-hover">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2 text-reveal">Business</h3>
+                    <p class="text-blue-500 font-semibold mb-3 text-reveal">$49/month</p>
+                    <p id="business-plan-text" class="text-sm text-gray-600 text-reveal">Advanced tools for growing businesses.</p>
                 </div>
-                <div class="bg-gray-50 p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover-glow text-hover">
-                    <h3 class="text-base sm:text-lg md:text-lg font-medium text-gray-800">Custom</h3>
-                    <p class="text-blue-500 mt-1 font-semibold" id="custom-plan-price">Contact Us</p>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-600" id="custom-plan-text">Tailored solutions for enterprises.</p>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-glow text-hover">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2 text-reveal">Custom</h3>
+                    <p id="custom-plan-price" class="text-blue-500 font-semibold mb-3 text-reveal">Contact Us</p>
+                    <p id="custom-plan-text" class="text-sm text-gray-600 text-reveal">Tailored solutions for enterprises.</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-4 sm:mb-6 md:mb-8 scroll-reveal">
-            <h2 class="text-xl sm:text-2rem md:text-2.2rem font-semibold text-center mb-3 sm:mb-4 md:mb-5 text-blue-600" id="contact-title">Get in Touch</h2>
-            <div class="max-w-md mx-auto p-3 sm:p-4 bg-gray-50 rounded-lg shadow-md">
+        <!-- Contact -->
+        <section id="contact" class="mb-12 scroll-reveal">
+            <h2 id="contact-title" class="text-3xl font-semibold text-center mb-8 text-blue-600 text-reveal">Get in Touch</h2>
+            <div class="max-w-md mx-auto bg-gray-50 p-6 rounded-lg shadow-md">
                 <form action="https://formspree.io/f/xanovbqp" method="POST">
-                    <div class="mb-3">
-                        <label for="name" class="block text-xs sm:text-sm font-medium text-gray-700" id="name-label">Name</label>
-                        <input type="text" id="name" name="name" required class="w-full p-1.5 border rounded-md text-sm"/>
+                    <div class="mb-4">
+                        <label for="name" id="name-label" class="block text-sm font-medium text-gray-700 mb-2 text-reveal">Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="block text-xs sm:text-sm font-medium text-gray-700" id="email-label">Email</label>
-                        <input type="email" id="email" name="email" required class="w-full p-1.5 border rounded-md text-sm"/>
+                    <div class="mb-4">
+                        <label for="email" id="email-label" class="block text-sm font-medium text-gray-700 mb-2 text-reveal">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     </div>
-                    <div class="mb-3">
-                        <label for="message" class="block text-xs sm:text-sm font-medium text-gray-700" id="message-label">Message</label>
-                        <textarea id="message" name="message" required class="w-full p-1.5 border rounded-md h-20 text-sm"></textarea>
+                    <div class="mb-6">
+                        <label for="message" id="message-label" class="block text-sm font-medium text-gray-700 mb-2 text-reveal">Message</label>
+                        <textarea id="message" name="message" required rows="4"
+                                  class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
                     </div>
-                    <button type="submit" class="bg-blue-600 text-white font-semibold px-3 sm:px-4 py-1.5 rounded-md hover:bg-blue-700 text-sm">Send</button>
+                    <button type="submit" id="send-button" 
+                            class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-md hover:bg-blue-700 transition-colors text-reveal">
+                        Send
+                    </button>
                 </form>
             </div>
         </section>
 
-        <section class="text-center mb-4 sm:mb-6 md:mb-8 scroll-reveal">
-            <a href="software/evyox.exe" download id="download-link">
-                <button class="download-btn bg-blue-600 text-white font-semibold px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full shadow-md hover:bg-blue-700 transition-all duration-200 text-sm sm:text-base" id="download-button">
+        <!-- Download Section -->
+        <section class="text-center mb-12 scroll-reveal">
+            <a href="https://github.com/Daniel-Espinn/evyox/releases/download/evyox/evyox.exe" download id="download-link">
+                <button id="download-button" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-blue-700 transition-colors mb-4 text-reveal">
                     Download Now
                 </button>
             </a>
-            <div class="progress-bar mt-1.5"></div>
-            <a href="/blog" class="block mt-3 text-blue-600 hover:underline text-xs sm:text-sm md:text-base" id="learn-more">Learn More About Evyox</a>
+            <div class="progress-bar mt-4"></div>
+            <div class="mt-4">
+                <a href="/blog" id="learn-more" class="text-blue-600 hover:underline text-hover text-reveal">
+                    Learn More About Evyox
+                </a>
+            </div>
         </section>
     </main>
 
-    <footer class="text-center py-2 sm:py-3 text-xs sm:text-sm text-gray-500">
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-gray-500 border-t border-gray-200">
         <p id="footer-text">© 2025 Evyox. All rights reserved.</p>
     </footer>
 
     <script>
-        // Carousel logic
+        // Global variables
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            if (index >= totalSlides) currentSlide = 0;
-            else if (index < 0) currentSlide = totalSlides - 1;
-            else currentSlide = index;
-            const offset = -currentSlide * 100;
-            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
-        }
-
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        document.querySelector('.carousel .carousel-btn.prev').addEventListener('click', () => changeSlide(-1));
-        document.querySelector('.carousel .carousel-btn.next').addEventListener('click', () => changeSlide(1));
-
-        // Touch support
-        let touchStartX = 0;
-        const carouselInner = document.querySelector('.carousel-inner');
-        carouselInner.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-        carouselInner.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            if (touchStartX - touchEndX > 50) changeSlide(1);
-            if (touchEndX - touchStartX > 50) changeSlide(-1);
-        });
-
-        setInterval(() => changeSlide(1), 5000);
-        showSlide(currentSlide);
-
-        // Testimonial carousel logic
         let currentTestimonialSlide = 0;
-        const testimonialSlides = document.querySelectorAll('.testimonial-item');
-        const totalTestimonialSlides = testimonialSlides.length;
+        let isMenuOpen = false;
 
-        function showTestimonialSlide(index) {
-            if (index >= totalTestimonialSlides) currentTestimonialSlide = 0;
-            else if (index < 0) currentTestimonialSlide = totalTestimonialSlides - 1;
-            else currentTestimonialSlide = index;
-            const offset = -currentTestimonialSlide * 100;
-            document.querySelector('.testimonial-inner').style.transform = `translateX(${offset}%)`;
-        }
-
-        function changeTestimonialSlide(direction) {
-            showTestimonialSlide(currentTestimonialSlide + direction);
-        }
-
-        document.querySelector('.testimonial-carousel .carousel-btn.prev').addEventListener('click', () => changeTestimonialSlide(-1));
-        document.querySelector('.testimonial-carousel .carousel-btn.next').addEventListener('click', () => changeTestimonialSlide(1));
-
-        // Touch support for testimonials
-        const testimonialInner = document.querySelector('.testimonial-inner');
-        testimonialInner.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-        testimonialInner.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            if (touchStartX - touchEndX > 50) changeTestimonialSlide(1);
-            if (touchEndX - touchStartX > 50) changeTestimonialSlide(-1);
-        });
-
-        setInterval(() => changeTestimonialSlide(1), 7000);
-        showTestimonialSlide(currentTestimonialSlide);
-
-        // Scroll reveal
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        function revealOnScroll() {
-            revealElements.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50) element.classList.add('visible');
-            });
-        }
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
-
-        // Download button logic
+        // DOM elements
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navbar = document.getElementById('navbar');
+        const carouselInner = document.getElementById('carousel-inner');
+        const testimonialInner = document.getElementById('testimonial-inner');
+        const languageSelector = document.getElementById('language-selector');
+        const mobileLanguageSelector = document.getElementById('mobile-language-selector');
         const downloadLink = document.getElementById('download-link');
         const downloadButton = document.getElementById('download-button');
         const progressBar = document.querySelector('.progress-bar');
 
-        downloadButton.addEventListener('click', async (e) => {
-            e.preventDefault();
-            progressBar.style.display = 'block';
-            let width = 0;
-            const updateProgress = () => {
-                if (width >= 100) {
-                    progressBar.style.display = 'none';
-                    downloadLink.click();
-                } else {
-                    width += 20;
-                    progressBar.style.width = `${width}%`;
-                    requestAnimationFrame(updateProgress);
-                }
-            };
-            requestAnimationFrame(updateProgress);
-        });
+        // Carousel data
+        const slides = document.querySelectorAll('.carousel-item');
+        const testimonials = document.querySelectorAll('.testimonial-item');
 
-        // Language translations
+        // Translations
         const translations = {
             en: {
                 'header-subtitle': 'Revolutionary Management Software',
-                'description-text': 'Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful, it’s designed to simplify your workflow.',
+                'description-text': 'Streamline your business with Evyox – the ultimate tool for efficient administration. Modern, intuitive, and powerful, it\'s designed to simplify your workflow.',
                 'demo-title': 'Watch Evyox in Action',
                 'analytics-title': 'Powerful Analytics',
-                'analytics-text': 'Gain deep insights into your business with Evyox’s advanced analytics tools, designed to help you make data-driven decisions.',
+                'analytics-text': 'Gain deep insights into your business with Evyox\'s advanced analytics tools, designed to help you make data-driven decisions.',
                 'team-title': 'Team Collaboration',
-                'team-text': 'Enhance teamwork with Evyox’s seamless collaboration features, keeping your team connected and productive.',
+                'team-text': 'Enhance teamwork with Evyox\'s seamless collaboration features, keeping your team connected and productive.',
                 'pricing-title': 'Pricing Plans',
-                'test-plan-text': 'Try Evyox with full access for желтtesting.',
+                'test-plan-text': 'Try Evyox with full access for testing.',
                 'basic-plan-text': 'Essential features for small teams.',
                 'business-plan-text': 'Advanced tools for growing businesses.',
                 'custom-plan-price': 'Contact Us',
@@ -478,6 +652,7 @@
                 'name-label': 'Name',
                 'email-label': 'Email',
                 'message-label': 'Message',
+                'send-button': 'Send',
                 'download-button': 'Download Now',
                 'learn-more': 'Learn More About Evyox',
                 'footer-text': '© 2025 Evyox. All rights reserved.'
@@ -500,20 +675,220 @@
                 'name-label': 'Nombre',
                 'email-label': 'Correo Electrónico',
                 'message-label': 'Mensaje',
+                'send-button': 'Enviar',
                 'download-button': 'Descargar Ahora',
                 'learn-more': 'Aprende Más Sobre Evyox',
                 'footer-text': '© 2025 Evyox. Todos los derechos reservados.'
             }
         };
 
-        const langSelector = document.getElementById('language-selector');
-        langSelector.addEventListener('change', () => {
-            const lang = langSelector.value;
-            document.querySelectorAll('[id]').forEach(element => {
-                if (translations[lang][element.id]) {
-                    element.textContent = translations[lang][element.id];
+        // Hamburger menu functionality
+        hamburger.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Navigation functionality
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Close mobile menu
+            if (isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        }
+
+        // Add click listeners to navigation links
+        document.querySelectorAll('[data-section]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                scrollToSection(sectionId);
+                
+                // Update active link
+                document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll(`[data-section="${sectionId}"]`).forEach(l => l.classList.add('active'));
+            });
+        });
+
+        // Sticky navbar
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-section') === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Carousel functionality
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+            
+            const offset = -currentSlide * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Carousel controls
+        document.getElementById('carousel-prev').addEventListener('click', () => changeSlide(-1));
+        document.getElementById('carousel-next').addEventListener('click', () => changeSlide(1));
+
+        // Auto-advance carousel
+        setInterval(() => changeSlide(1), 5000);
+
+        // Testimonial carousel functionality
+        function showTestimonialSlide(index) {
+            if (index >= testimonials.length) currentTestimonialSlide = 0;
+            else if (index < 0) currentTestimonialSlide = testimonials.length - 1;
+            else currentTestimonialSlide = index;
+            
+            const offset = -currentTestimonialSlide * 100;
+            testimonialInner.style.transform = `translateX(${offset}%)`;
+        }
+
+        function changeTestimonialSlide(direction) {
+            showTestimonialSlide(currentTestimonialSlide + direction);
+        }
+
+        // Testimonial controls
+        document.getElementById('testimonial-prev').addEventListener('click', () => changeTestimonialSlide(-1));
+        document.getElementById('testimonial-next').addEventListener('click', () => changeTestimonialSlide(1));
+
+        // Auto-advance testimonials
+        setInterval(() => changeTestimonialSlide(1), 7000);
+
+        // Language switching
+        function changeLanguage(lang) {
+            const translation = translations[lang];
+            if (translation) {
+                Object.keys(translation).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = translation[key];
+                    }
+                });
+            }
+        }
+
+        languageSelector.addEventListener('change', function() {
+            const selectedLang = this.value;
+            mobileLanguageSelector.value = selectedLang;
+            changeLanguage(selectedLang);
+        });
+
+        mobileLanguageSelector.addEventListener('change', function() {
+            const selectedLang = this.value;
+            languageSelector.value = selectedLang;
+            changeLanguage(selectedLang);
+        });
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .text-reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Touch support for carousels
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselInner.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselInner.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        testimonialInner.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        testimonialInner.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleTestimonialSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) changeSlide(1);
+            if (touchEndX > touchStartX + 50) changeSlide(-1);
+        }
+
+        function handleTestimonialSwipe() {
+            if (touchEndX < touchStartX - 50) changeTestimonialSlide(1);
+            if (touchEndX > touchStartX + 50) changeTestimonialSlide(-1);
+        }
+
+        // Download progress bar
+        downloadButton.addEventListener('click', async (e) => {
+            e.preventDefault();
+            progressBar.style.display = 'block';
+            let width = 0;
+            const updateProgress = () => {
+                if (width >= 100) {
+                    progressBar.style.display = 'none';
+                    downloadLink.click();
+                } else {
+                    width += 20;
+                    progressBar.style.width = `${width}%`;
+                    requestAnimationFrame(updateProgress);
+                }
+            };
+            requestAnimationFrame(updateProgress);
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(0);
+            showTestimonialSlide(0);
+            revealOnScroll();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (isMenuOpen && !hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
         });
     </script>
 </body>
